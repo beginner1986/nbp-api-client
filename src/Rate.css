@@ -1,0 +1,13 @@
+.rate {
+    margin: 10px;
+    width: 15rem;
+}
+
+.rate-title {
+    background-color: steelblue;
+    color: white;
+}
+
+.rate-footer {
+    background-color: lightgray !important;
+}

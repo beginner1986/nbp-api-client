@@ -1,7 +1,12 @@
 import {useEffect, useState} from "react";
+import {Card} from "react-bootstrap";
+import "./Rate.css";
 
 export default function Rate(props) {
-    const [rate, setRate] = useState([]);
+    const [name, setName] = useState("");
+    const [code, setCode] = useState("");
+    const [mid, setMid] = useState([]);
+    const [date, setDate] = useState("");
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
 
@@ -12,24 +17,32 @@ export default function Rate(props) {
             .then(res => res.json())
             .then((res) => {
                     setIsLoaded(true);
-                    setRate(res.rates.at(0));
+                    setMid(res.rates.at(0).mid);
+                    setDate(res.rates.at(0).effectiveDate);
+                    setName(res.currency);
+                    setCode(res.code);
                 },
                 (error) => {
                     setIsLoaded(true);
                     setError(error);
                 }
             );
-    }, [props.currency]);
+        }, [props.currency]
+    );
 
     if(error) {
         return <div>Error: {error}</div>
     } else if(!isLoaded) {
         return <div>Loading...</div>
     } else {
-        console.log(rate.mid);
+        let multiplier = mid < 0.1 ? 100 : 1;
 
         return (
-            <div>{props.currency}: {rate.mid}</div>
+            <Card border="primary" className="rate">
+                <Card.Title className="rate-title">{name.toUpperCase()}</Card.Title>
+                <Card.Text>{multiplier} {code}: {(multiplier * mid).toFixed(4)}</Card.Text>
+                <Card.Footer className="rate-footer">{date}</Card.Footer>
+            </Card>
         );
     }
 }

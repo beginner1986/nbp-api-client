@@ -1,13 +1,11 @@
 import './App.css';
-import Rate from "./Rate";
+import MostPopularRates from "./MostPopularRates";
 
 function App() {
 
   return (
     <div className="App">
-        <Rate currency="USD"/>
-        <Rate currency="GBP"/>
-        <Rate currency="EUR"/>
+        <MostPopularRates/>
     </div>
   );
 }
