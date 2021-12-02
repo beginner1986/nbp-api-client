@@ -14,7 +14,7 @@ ReactDOM.render(
     <BrowserRouter>
         <Routes>
             <Route path="/" element={<App/>}>
-                <Route path="most-popular" element={<MostPopularRates/>}/>
+                <Route index element={<MostPopularRates/>}/>
                 <Route path="/tab-a" element={<TabA/>}/>
                 <Route path="/tab-b" element={<TabB/>}/>
                 <Route path="/all" element={<All/>}/>

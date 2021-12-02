@@ -1,6 +1,5 @@
 import './App.css';
-import MostPopularRates from "./components/MostPopularRates";
-import {Link, Outlet} from "react-router-dom";
+import { NavLink, Outlet} from "react-router-dom";
 
 function App() {
 
@@ -8,10 +7,10 @@ function App() {
     <div className="App">
         <h1>KURSY WALUT NBP</h1>
         <nav>
-            <Link to="/most-popular">Najpopularniejsze</Link>
-            <Link to="/tab-a">Tabela A</Link>
-            <Link to="/tab-b">Tabela B</Link>
-            <Link to="/all">Wszystkie</Link>
+            <NavLink to="/" className="nav-element">Najpopularniejsze</NavLink>
+            <NavLink to="/tab-a" className="nav-element">Tabela A</NavLink>
+            <NavLink to="/tab-b" className="nav-element">Tabela B</NavLink>
+            <NavLink to="/all" className="nav-element">Wszystkie</NavLink>
         </nav>
         <Outlet/>
     </div>

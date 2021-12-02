@@ -2,3 +2,16 @@
   text-align: center;
   margin-top: 50px;
 }
+
+.active {
+  color: red;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-element {
+  margin: 0 1rem;
+}
