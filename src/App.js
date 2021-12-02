@@ -1,5 +1,5 @@
 import './App.css';
-import MostPopularRates from "./MostPopularRates";
+import MostPopularRates from "./components/MostPopularRates";
 import {Link, Outlet} from "react-router-dom";
 
 function App() {

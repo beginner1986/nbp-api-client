@@ -4,10 +4,10 @@ import './index.css';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import TabA from "./TabA";
-import TabB from "./TabB";
-import All from "./All";
-import MostPopularRates from "./MostPopularRates";
+import TabA from "./components/TabA";
+import TabB from "./components/TabB";
+import All from "./components/All";
+import MostPopularRates from "./components/MostPopularRates";
 
 ReactDOM.render(
   <React.StrictMode>
