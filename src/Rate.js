@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {Card} from "react-bootstrap";
+import {Card, Spinner} from "react-bootstrap";
 import "./Rate.css";
 
 export default function Rate(props) {
@@ -33,7 +33,9 @@ export default function Rate(props) {
     if(error) {
         return <div>Error: {error}</div>
     } else if(!isLoaded) {
-        return <div>Loading...</div>
+        return (
+            <Spinner animation="border"/>
+        );
     } else {
         let multiplier = mid < 0.1 ? 100 : 1;
 
