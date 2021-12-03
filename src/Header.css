@@ -1,6 +1,10 @@
-.App {
+.header {
   text-align: center;
-  margin-top: 50px;
+  margin: 50px;
+}
+
+.header nav {
+  margin-bottom: 50px;
 }
 
 .active {

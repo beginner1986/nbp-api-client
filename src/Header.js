@@ -1,10 +1,10 @@
-import './App.css';
+import './Header.css';
 import { NavLink, Outlet} from "react-router-dom";
 
-function App() {
+function Header() {
 
   return (
-    <div className="App">
+    <div className="header">
         <h1>KURSY WALUT NBP</h1>
         <nav>
             <NavLink to="/" className="nav-element">Najpopularniejsze</NavLink>
@@ -17,4 +17,4 @@ function App() {
   );
 }
 
-export default App;
+export default Header;

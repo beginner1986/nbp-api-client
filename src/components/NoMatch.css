@@ -1,0 +1,11 @@
+.no-match-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.no-match-header {
+    font-weight: bold;
+    font-size: 2rem;
+}
