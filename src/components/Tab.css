@@ -2,7 +2,7 @@ h2 {
     font-size: 1.5rem;
 }
 
-.tab-a {
+.tab {
     display: flex;
     flex-direction: column;
     justify-content: center;
