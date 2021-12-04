@@ -1,13 +1,14 @@
 import {useEffect, useState} from "react";
 import {Card, Spinner} from "react-bootstrap";
 import "./Rate.css";
+import Error from "./Error";
 
 export default function Rate(props) {
     const [name, setName] = useState("");
     const [code, setCode] = useState("");
     const [mid, setMid] = useState([]);
     const [date, setDate] = useState("");
-    const [error, setError] = useState(null);
+    const [error, setError] = useState("");
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
@@ -31,7 +32,8 @@ export default function Rate(props) {
     );
 
     if(error) {
-        return <div>Error: {error}</div>
+        const errorMessage = `Błąd pobierania kursu ${props.currency}...`;
+        return <Error error={errorMessage}/>
     } else if(!isLoaded) {
         return (
             <Spinner animation="border"/>

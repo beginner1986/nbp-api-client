@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
-import {Table} from "react-bootstrap";
+import {Spinner, Table} from "react-bootstrap";
 import "./TabA.css";
+import Error from "./Error";
 
 export default function TabA(props) {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -36,22 +37,28 @@ export default function TabA(props) {
             </tr>);
     });
 
-    return (
-        <div className="tab-a">
-            <h2>Notowania z dnia {date}:</h2>
-            <Table striped bordered hover>
-                <thead>
-                    <tr>
-                        <th>Lp.</th>
-                        <th>Kod</th>
-                        <th>Waluta</th>
-                        <th>Kurs średni</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {components}
-                </tbody>
-            </Table>
-        </div>
-    );
+    if(error) {
+        return <Error error="Nie można pobrać tabeli A..."/>
+    } else if(!isLoaded) {
+        return <Spinner animation="border"/>
+    } else {
+        return (
+            <div className="tab-a">
+                <h2>Notowania z dnia {date}:</h2>
+                <Table striped bordered hover>
+                    <thead>
+                        <tr>
+                            <th>Lp.</th>
+                            <th>Kod</th>
+                            <th>Waluta</th>
+                            <th>Kurs średni</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {components}
+                    </tbody>
+                </Table>
+            </div>
+        );
+    }
 }
