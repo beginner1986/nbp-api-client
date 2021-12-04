@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Header from './Header';
+import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import TabA from "./components/TabA";
@@ -14,7 +14,7 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
         <Routes>
-            <Route path="/" element={<Header/>}>
+            <Route path="/" element={<App/>}>
                 <Route index element={<MostPopularRates/>}/>
                 <Route path="/tab-a" element={<TabA/>}/>
                 <Route path="/tab-b" element={<TabB/>}/>
