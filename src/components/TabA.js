@@ -1,4 +1,6 @@
 import {useEffect, useState} from "react";
+import {Table} from "react-bootstrap";
+import "./TabA.css";
 
 export default function TabA(props) {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -24,11 +26,32 @@ export default function TabA(props) {
         }, []
     );
 
-    let components = rates.map((rate) => { return (<div key={rate.code}>{rate.mid}</div>)});
+    let components = rates.map((rate, index) => {
+        return (
+            <tr key={rate.code}>
+                <td>{index + 1}</td>
+                <td>{rate.code}</td>
+                <td>{rate.currency}</td>
+                <td>{rate.mid}</td>
+            </tr>);
+    });
 
     return (
-        <div>
-            {components}
+        <div className="tab-a">
+            <h2>Notowania z dnia {date}:</h2>
+            <Table striped bordered hover>
+                <thead>
+                    <tr>
+                        <th>Lp.</th>
+                        <th>Kod</th>
+                        <th>Waluta</th>
+                        <th>Kurs średni</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {components}
+                </tbody>
+            </Table>
         </div>
     );
 }
