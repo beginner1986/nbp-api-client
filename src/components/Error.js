@@ -1,12 +1,12 @@
 import React from "react";
 import {Card} from "react-bootstrap";
-import "./NoMatch.css";
+import "./Error.css";
 
-export default function NoMatch(props) {
+export default function Error(props) {
     return (
-        <div className="no-match-card">
+        <div className="error-card">
             <Card bg="danger" text="white">
-                <Card.Header className="no-match-header">Nieprawidłowy adres</Card.Header>
+                <Card.Header className="error-header">Nieprawidłowy adres</Card.Header>
                 <Card.Body>
                     <Card.Text>
                         Nie znaleziono strony o wskazanym adresie...

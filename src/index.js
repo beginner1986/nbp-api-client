@@ -8,7 +8,7 @@ import TabA from "./components/TabA";
 import TabB from "./components/TabB";
 import All from "./components/All";
 import MostPopularRates from "./components/MostPopularRates";
-import NoMatch from "./components/NoMatch";
+import Error from "./components/Error";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -19,7 +19,7 @@ ReactDOM.render(
                 <Route path="/tab-a" element={<TabA/>}/>
                 <Route path="/tab-b" element={<TabB/>}/>
                 <Route path="/all" element={<All/>}/>
-                <Route path="*" element={<NoMatch/>}/>
+                <Route path="*" element={<Error/>}/>
                 />
             </Route>
         </Routes>
