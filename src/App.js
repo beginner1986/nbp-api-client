@@ -10,6 +10,7 @@ function App() {
             <NavLink to="/" className="nav-element">Najpopularniejsze</NavLink>
             <NavLink to="/tab-a" className="nav-element">Tabela A</NavLink>
             <NavLink to="/tab-b" className="nav-element">Tabela B</NavLink>
+            <NavLink to="/tab-c" className="nav-element">Tabela C</NavLink>
             <NavLink to="/all" className="nav-element">Wszystkie</NavLink>
         </nav>
         <Outlet/>

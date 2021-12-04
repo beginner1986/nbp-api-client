@@ -4,8 +4,7 @@ import './index.css';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import TabA from "./components/TabA";
-import TabB from "./components/TabB";
+import Tab from "./components/Tab";
 import All from "./components/All";
 import MostPopularRates from "./components/MostPopularRates";
 import Error from "./components/Error";
@@ -16,8 +15,9 @@ ReactDOM.render(
         <Routes>
             <Route path="/" element={<App/>}>
                 <Route index element={<MostPopularRates/>}/>
-                <Route path="/tab-a" element={<TabA/>}/>
-                <Route path="/tab-b" element={<TabB/>}/>
+                <Route path="/tab-a" element={<Tab tab="a"/>}/>
+                <Route path="/tab-b" element={<Tab tab="b"/>}/>
+                <Route path="/tab-c" element={<Tab tab="c"/>}/>
                 <Route path="/all" element={<All/>}/>
                 <Route path="*" element={<Error/>}/>
                 />

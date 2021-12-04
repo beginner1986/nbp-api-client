@@ -1,16 +1,16 @@
 import {useEffect, useState} from "react";
 import {Spinner, Table} from "react-bootstrap";
-import "./TabA.css";
+import "./Tab.css";
 import Error from "./Error";
 
-export default function TabA(props) {
+export default function Tab(props) {
     const [isLoaded, setIsLoaded] = useState(false);
     const [error, setError] = useState(null);
     const [date, setDate] = useState("");
     const [rates, setRates] = useState([]);
 
     useEffect(() => {
-        const url = "http://api.nbp.pl/api/exchangerates/tables/a/";
+        const url = `http://api.nbp.pl/api/exchangerates/tables/${props.tab}/`;
 
         fetch(url)
             .then(res => res.json())
@@ -24,7 +24,7 @@ export default function TabA(props) {
                     setError(error);
                 }
             );
-        }, []
+        }, [props.tab]
     );
 
     let components = rates.map((rate, index) => {
@@ -33,12 +33,13 @@ export default function TabA(props) {
                 <td>{index + 1}</td>
                 <td>{rate.code}</td>
                 <td>{rate.currency}</td>
-                <td>{rate.mid}</td>
+                <td>{rate?.mid}</td>
             </tr>);
     });
 
     if(error) {
-        return <Error error="Nie można pobrać tabeli A..."/>
+        const errorMessage = `Nie można pobrać tabeli ${props.tab.toUpperCase()}...`
+        return <Error error={errorMessage}/>
     } else if(!isLoaded) {
         return <Spinner animation="border"/>
     } else {
