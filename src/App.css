@@ -4,17 +4,5 @@ header {
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-top: 50px;
-}
-
-header nav {
-  margin-bottom: 50px;
-}
-
-.active {
-  color: red;
-}
-
-.nav-element {
-  margin: 0 1rem;
+  margin-top: 5rem;
 }

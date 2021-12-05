@@ -1,18 +1,33 @@
 import './App.css';
-import { NavLink, Outlet} from "react-router-dom";
+import {LinkContainer} from "react-router-bootstrap";
+import {Container, Nav, Navbar} from "react-bootstrap";
+import {Outlet} from "react-router-dom";
 
 function App() {
 
   return (
     <header>
-        <h1>KURSY WALUT NBP</h1>
-        <nav>
-            <NavLink to="/" className="nav-element">Najpopularniejsze</NavLink>
-            <NavLink to="/tab-a" className="nav-element">Tabela A</NavLink>
-            <NavLink to="/tab-b" className="nav-element">Tabela B</NavLink>
-            <NavLink to="/tab-c" className="nav-element">Tabela C</NavLink>
-            <NavLink to="/all" className="nav-element">Wszystkie</NavLink>
-        </nav>
+        <Navbar fixed="top" bg="primary" variant="dark">
+            <Container>
+                <Nav>
+                    <LinkContainer to="/">
+                        <Nav.Link>Najpopularniejsze</Nav.Link>
+                    </LinkContainer>
+                    <LinkContainer to="/tab-a">
+                        <Nav.Link>Tabela A</Nav.Link>
+                    </LinkContainer>
+                    <LinkContainer to="/tab-b">
+                        <Nav.Link>Tabela B</Nav.Link>
+                    </LinkContainer>
+                    <LinkContainer to="/tab-c">
+                        <Nav.Link>Tabela C</Nav.Link>
+                    </LinkContainer>
+                    <LinkContainer to="/all">
+                        <Nav.Link>Wszystkie</Nav.Link>
+                    </LinkContainer>
+                </Nav>
+            </Container>
+        </Navbar>
         <Outlet/>
     </header>
   );

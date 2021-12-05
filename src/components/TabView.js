@@ -9,7 +9,7 @@ export default function TabView(props) {
         return <Spinner animation="border"/>
     } else {
         return (
-            <div className="tab">
+            <main className="tab">
                 <h2>Notowania z dnia {props.date}:</h2>
                 <Table striped bordered hover>
                     <thead>
@@ -19,7 +19,7 @@ export default function TabView(props) {
                         {generateTableBody()}
                     </tbody>
                 </Table>
-            </div>
+            </main>
         );
     }
 
