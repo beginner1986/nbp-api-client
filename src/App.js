@@ -7,9 +7,19 @@ function App() {
 
   return (
     <header>
-        <Navbar fixed="top" bg="primary" variant="dark">
+        <Navbar fixed="top" expand="lg" bg="primary" variant="dark">
             <Container>
-                <Nav>
+                <LinkContainer to="/">
+                    <Navbar.Brand>
+                        <img
+                            src="/favicon.ico"
+                            width="50"
+                            height="50"
+                            alt="React logo"
+                        />
+                    </Navbar.Brand>
+                </LinkContainer>
+                <Nav className="me-auto">
                     <LinkContainer to="/">
                         <Nav.Link>Najpopularniejsze</Nav.Link>
                     </LinkContainer>
