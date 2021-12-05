@@ -8,15 +8,9 @@ export default function Tab(props) {
     const [error, setError] = useState(null);
     const [date, setDate] = useState("");
     const [rates, setRates] = useState([]);
-    const [tabC, setTabC] = useState(false);
 
     useEffect(() => {
         const url = `https://api.nbp.pl/api/exchangerates/tables/${props.tab}/`;
-        if(props.tab === "c") {
-            setTabC(true);
-        } else {
-            setTabC(false);
-        }
 
         fetch(url)
             .then(res => res.json())
@@ -62,7 +56,7 @@ export default function Tab(props) {
                 <th>Waluta</th>
                 {
                     function() {
-                        if(tabC) {
+                        if(props.tab === "c") {
                             return (
                                 <>
                                     <th>Średni kurs zakupu</th>
@@ -88,7 +82,7 @@ export default function Tab(props) {
                     <td>{rate.currency}</td>
                     {
                         function() {
-                            if(tabC) {
+                            if(props.tab === "c") {
                                 return (
                                     <>
                                         <td>{rate.ask}</td>
