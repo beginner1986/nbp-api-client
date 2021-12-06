@@ -1,6 +1,6 @@
 # Polish National Bank currency rates API client
 
-Polish National Bank API client to fetch and present currency rates. Project based on JavaScript and React.
+Polish National Bank API client to fetch and present currency and gold rates. Project based on JavaScript and React.
 All the interface prepared in Polish.
 
 ## Libraries
@@ -9,4 +9,3 @@ All the interface prepared in Polish.
 - [React Bootstrap](https://react-bootstrap.github.io/)
 - [Bootstrap](https://getbootstrap.com/)
 - [React Router Boostrap](https://www.npmjs.com/package/react-router-bootstrap/)
-

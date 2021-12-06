@@ -35,8 +35,8 @@ function App() {
                     <LinkContainer to="/tab-c">
                         <Nav.Link>Kursy zakupu/sprzedaży</Nav.Link>
                     </LinkContainer>
-                    <LinkContainer to="/all">
-                        <Nav.Link>Wszystkie</Nav.Link>
+                    <LinkContainer to="/gold">
+                        <Nav.Link>Cena złota</Nav.Link>
                     </LinkContainer>
                 </Nav>
             </Container>
