@@ -6,8 +6,8 @@ import {Outlet} from "react-router-dom";
 function App() {
 
   return (
-    <header>
-        <Navbar fixed="top" expand="lg" bg="primary" variant="dark">
+    <div className="header">
+        <Navbar fixed="top" bg="primary" variant="dark">
             <Container>
                 <LinkContainer to="/">
                     <Navbar.Brand>
@@ -39,7 +39,7 @@ function App() {
             </Container>
         </Navbar>
         <Outlet/>
-    </header>
+    </div>
   );
 }
 

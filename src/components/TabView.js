@@ -10,7 +10,7 @@ export default function TabView(props) {
     } else {
         return (
             <main className="tab">
-                <h2>Notowania z dnia {props.date}:</h2>
+                <h2 className="text-primary text-center">Notowania z dnia {props.date}:</h2>
                 <Table striped bordered hover>
                     <thead>
                         {generateTableHeaders()}
