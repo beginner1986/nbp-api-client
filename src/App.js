@@ -1,6 +1,6 @@
 import './App.css';
 import {LinkContainer} from "react-router-bootstrap";
-import {Container, Nav, Navbar} from "react-bootstrap";
+import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
 import {Outlet} from "react-router-dom";
 
 function App() {
@@ -23,14 +23,17 @@ function App() {
                     <LinkContainer to="/">
                         <Nav.Link>Najpopularniejsze</Nav.Link>
                     </LinkContainer>
-                    <LinkContainer to="/tab-a">
-                        <Nav.Link>Tabela A</Nav.Link>
-                    </LinkContainer>
-                    <LinkContainer to="/tab-b">
-                        <Nav.Link>Tabela B</Nav.Link>
-                    </LinkContainer>
+                    <NavDropdown title="Kursy średnie">
+                        <LinkContainer to="/tab-a">
+                            <NavDropdown.Item>Tabela A</NavDropdown.Item>
+                        </LinkContainer>
+                        <LinkContainer to="/tab-b">
+                            <NavDropdown.Item>Tabela B</NavDropdown.Item>
+                        </LinkContainer>
+                    </NavDropdown>
+
                     <LinkContainer to="/tab-c">
-                        <Nav.Link>Tabela C</Nav.Link>
+                        <Nav.Link>Kursy zakupu/sprzedaży</Nav.Link>
                     </LinkContainer>
                     <LinkContainer to="/all">
                         <Nav.Link>Wszystkie</Nav.Link>
