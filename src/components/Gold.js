@@ -35,11 +35,13 @@ export default function Gold(props) {
             <Spinner animation="border"/>
         );
     } else {
+        const d = new Date(date);
+
         return (
             <Card border="primary" className="rate">
                 <Card.Title className="rate-title">Cena złota</Card.Title>
                 <Card.Text>{price} zł/g</Card.Text>
-                <Card.Footer className="rate-footer">{date}</Card.Footer>
+                <Card.Footer className="rate-footer">{d.getDate()}.{d.getMonth()}.{d.getFullYear()} r.</Card.Footer>
             </Card>
         );
     }

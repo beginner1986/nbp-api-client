@@ -7,6 +7,7 @@ export default function Rate(props) {
     const [name, setName] = useState("");
     const [code, setCode] = useState("");
     const [mid, setMid] = useState([]);
+    const [oldMid, setOldMid] = useState([]);
     const [date, setDate] = useState("");
     const [error, setError] = useState("");
     const [isLoaded, setIsLoaded] = useState(false);
@@ -40,12 +41,13 @@ export default function Rate(props) {
         );
     } else {
         let multiplier = mid < 0.1 ? 100 : 1;
+        const d = new Date(date);
 
         return (
             <Card border="primary" className="rate">
                 <Card.Title className="rate-title">{name.toUpperCase()}</Card.Title>
                 <Card.Text>{multiplier} {code}: {(multiplier * mid).toFixed(4)}</Card.Text>
-                <Card.Footer className="rate-footer">{date}</Card.Footer>
+                <Card.Footer className="rate-footer">{d.getDate()}.{d.getMonth()}.{d.getFullYear()} r.</Card.Footer>
             </Card>
         );
     }
