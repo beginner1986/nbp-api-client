@@ -46,7 +46,9 @@ function App() {
                         className="me-2"
                         aria-label="Szukaj"
                     />
-                    <Button variant="light">Szukaj</Button>
+                    <LinkContainer to="/search">
+                        <Button variant="light">Szukaj</Button>
+                    </LinkContainer>
                 </Form>
             </Container>
         </Navbar>
