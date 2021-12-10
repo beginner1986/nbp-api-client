@@ -1,10 +1,10 @@
 import './App.css';
 import {LinkContainer} from "react-router-bootstrap";
-import {Button, Container, Form, FormControl, Nav, Navbar, NavDropdown} from "react-bootstrap";
+import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
 import {Outlet} from "react-router-dom";
+import Search from "./components/Search";
 
 function App() {
-
   return (
     <div className="header">
         <Navbar fixed="top" bg="primary" variant="dark">
@@ -39,17 +39,7 @@ function App() {
                         <Nav.Link>Cena złota</Nav.Link>
                     </LinkContainer>
                 </Nav>
-                <Form className="d-flex">
-                    <FormControl
-                        type="search"
-                        placeholder="Szukaj"
-                        className="me-2"
-                        aria-label="Szukaj"
-                    />
-                    <LinkContainer to="/search">
-                        <Button variant="light">Szukaj</Button>
-                    </LinkContainer>
-                </Form>
+                <Search/>
             </Container>
         </Navbar>
         <Outlet/>
