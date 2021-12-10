@@ -8,7 +8,7 @@ import Tab from "./components/Tab";
 import Gold from "./components/Gold";
 import MostPopularRates from "./components/MostPopularRates";
 import Error from "./components/Error";
-import Search from "./components/Search";
+import SearchResults from "./components/SearchResults";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -20,7 +20,7 @@ ReactDOM.render(
                 <Route path="/tab-b" element={<Tab tab="b"/>}/>
                 <Route path="/tab-c" element={<Tab tab="c"/>}/>
                 <Route path="/gold" element={<Gold/>}/>
-                <Route path="/search" element={<Search/>}/>
+                <Route path="/search" element={<SearchResults/>}/>
                 <Route path="*" element={<Error/>}/>
                 />
             </Route>

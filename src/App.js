@@ -2,7 +2,7 @@ import './App.css';
 import {LinkContainer} from "react-router-bootstrap";
 import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
 import {Outlet} from "react-router-dom";
-import Search from "./components/Search";
+import SearchForm from "./components/SearchForm";
 
 function App() {
   return (
@@ -39,7 +39,7 @@ function App() {
                         <Nav.Link>Cena złota</Nav.Link>
                     </LinkContainer>
                 </Nav>
-                <Search/>
+                <SearchForm/>
             </Container>
         </Navbar>
         <Outlet/>
