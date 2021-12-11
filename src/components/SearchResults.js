@@ -1,7 +1,11 @@
+import {useSearchParams} from "react-router-dom";
+
 export default function SearchResults(props) {
+    let [searchParams, setSearchParams] = useSearchParams();
+
     return (
         <div>
-            Wyniki wyszukiwania
+            {searchParams.get("value")}
         </div>
     );
 }
