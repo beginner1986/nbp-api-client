@@ -11,16 +11,14 @@ export default function SearchForm(props) {
         setValue(event.target.value);
     }
     const handleSubmit = (event) => {
-        if(value === "")
-            return;
-
         setValue("");
-        navigate(`/search?value=${value}`);
+        if(value !== "")
+            navigate(`/search?value=${value}`);
         event.preventDefault();
     }
 
     return (
-        <div>
+        <>
             <Form className="d-flex" onSubmit={handleSubmit}>
                 <Form.Control
                     type="text"
@@ -32,6 +30,6 @@ export default function SearchForm(props) {
                 />
                 <Button variant="light" type="submit"><FontAwesomeIcon icon={faSearch}/> Szukaj</Button>
             </Form>
-        </div>
+        </>
     )
 }

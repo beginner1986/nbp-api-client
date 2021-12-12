@@ -68,7 +68,8 @@ export default function TabView(props) {
                             }
                         }()
                     }
-                </tr>);
+                </tr>
+            );
         });
     }
 }
