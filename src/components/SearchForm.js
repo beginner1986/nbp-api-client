@@ -1,6 +1,8 @@
 import {Button, Form} from "react-bootstrap";
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faSearch} from "@fortawesome/free-solid-svg-icons";
 
 export default function SearchForm(props) {
     let navigate = useNavigate();
@@ -9,7 +11,9 @@ export default function SearchForm(props) {
         setValue(event.target.value);
     }
     const handleSubmit = (event) => {
-        console.log("Value: " + value);
+        if(value === "")
+            return;
+
         setValue("");
         navigate(`/search?value=${value}`);
         event.preventDefault();
@@ -26,7 +30,7 @@ export default function SearchForm(props) {
                     value={value}
                     onChange={handleChange}
                 />
-                <Button variant="light" type="submit">Szukaj</Button>
+                <Button variant="light" type="submit"><FontAwesomeIcon icon={faSearch}/> Szukaj</Button>
             </Form>
         </div>
     )
