@@ -1,5 +1,4 @@
 import {useEffect, useState} from "react";
-import "./Tab.css";
 import TabView from "./TabView";
 
 export default function Tab(props) {

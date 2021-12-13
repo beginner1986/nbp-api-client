@@ -4,8 +4,8 @@ export default function SearchResults(props) {
     let [searchParams, setSearchParams] = useSearchParams();
 
     return (
-        <div>
+        <main>
             {searchParams.get("value")}
-        </div>
+        </main>
     );
 }
