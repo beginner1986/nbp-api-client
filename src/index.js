@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Navigation from './Navigation';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Tab from "./components/Tab";
@@ -13,20 +13,17 @@ import SearchResults from "./components/SearchResults";
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
+        <Navigation/>
         <Routes>
-            <Route path="/" element={<App/>}>
-                <Route index element={<MostPopularRates/>}/>
-                <Route path="/tab-a" element={<Tab tab="a"/>}/>
-                <Route path="/tab-b" element={<Tab tab="b"/>}/>
-                <Route path="/tab-c" element={<Tab tab="c"/>}/>
-                <Route path="/gold" element={<Gold/>}/>
-                <Route path="/search" element={<SearchResults/>}/>
-                <Route path="*" element={<Error/>}/>
-                />
-            </Route>
-        </Routes>
-    </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById('root')
+            <Route index element={<MostPopularRates/>}/>
+            <Route path="/tab-a" element={<Tab tab="a"/>}/>
+            <Route path="/tab-b" element={<Tab tab="b"/>}/>
+            <Route path="/tab-c" element={<Tab tab="c"/>}/>
+            <Route path="/gold" element={<Gold/>}/>
+            <Route path="/search" element={<SearchResults/>}/>
+            <Route path="*" element={<Error/>}/>
+    </Routes>
+</BrowserRouter>
+</React.StrictMode>,
+document.getElementById('root')
 );
-

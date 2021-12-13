@@ -1,13 +1,13 @@
-import './App.css';
+import './Navigation.css';
 import {LinkContainer} from "react-router-bootstrap";
 import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
 import {Outlet} from "react-router-dom";
 import SearchForm from "./components/SearchForm";
 
-function App() {
+function Navigation() {
   return (
-    <div className="header">
-        <Navbar fixed="top" bg="primary" variant="dark">
+    <header>
+        <Navbar fixed="top" bg="primary" variant="dark" expand="md">
             <Container>
                 <LinkContainer to="/">
                     <Navbar.Brand>
@@ -43,8 +43,8 @@ function App() {
             </Container>
         </Navbar>
         <Outlet/>
-    </div>
+    </header>
   );
 }
 
-export default App;
+export default Navigation;
