@@ -14,15 +14,17 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
         <Navigation/>
-        <Routes>
-            <Route index element={<MostPopularRates/>}/>
-            <Route path="/tab-a" element={<Tab tab="a"/>}/>
-            <Route path="/tab-b" element={<Tab tab="b"/>}/>
-            <Route path="/tab-c" element={<Tab tab="c"/>}/>
-            <Route path="/gold" element={<Gold/>}/>
-            <Route path="/search" element={<SearchResults/>}/>
-            <Route path="*" element={<Error/>}/>
-    </Routes>
+        <main>
+            <Routes>
+                <Route index element={<MostPopularRates/>}/>
+                <Route path="/tab-a" element={<Tab tab="a"/>}/>
+                <Route path="/tab-b" element={<Tab tab="b"/>}/>
+                <Route path="/tab-c" element={<Tab tab="c"/>}/>
+                <Route path="/gold" element={<Gold/>}/>
+                <Route path="/search" element={<SearchResults/>}/>
+                <Route path="*" element={<Error/>}/>
+            </Routes>
+        </main>
 </BrowserRouter>
 </React.StrictMode>,
 document.getElementById('root')
