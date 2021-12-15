@@ -9,6 +9,7 @@ import Gold from "./components/Gold";
 import MostPopularRates from "./components/MostPopularRates";
 import Error from "./components/Error";
 import SearchResults from "./components/SearchResults";
+import Footer from "./components/Footer";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -25,7 +26,8 @@ ReactDOM.render(
                 <Route path="*" element={<Error/>}/>
             </Routes>
         </main>
-</BrowserRouter>
+    </BrowserRouter>
+    <Footer/>
 </React.StrictMode>,
 document.getElementById('root')
 );

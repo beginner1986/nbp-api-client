@@ -9,6 +9,18 @@ main {
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
+  margin-top: 1rem;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  min-width: 100vw;
+  position: fixed;
+  bottom: 0;
 }
 
 h2 {
