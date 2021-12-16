@@ -3,20 +3,21 @@
   padding: 0;
 }
 
+body {}
+
 main {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-top: 1rem;
+  margin: 1rem 7rem;
 }
 
 footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 2rem;
   padding: 1rem;
   min-width: 100vw;
   position: fixed;

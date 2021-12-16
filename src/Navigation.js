@@ -7,7 +7,7 @@ import SearchForm from "./components/SearchForm";
 function Navigation() {
   return (
     <header>
-        <Navbar fixed="top" bg="primary" variant="dark" expand="md">
+        <Navbar fixed="top" bg="primary" variant="dark">
             <Container>
                 <LinkContainer to="/">
                     <Navbar.Brand>
