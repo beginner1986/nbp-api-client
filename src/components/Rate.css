@@ -3,10 +3,10 @@
 }
 
 .rate-title {
-    background-color: steelblue;
+    background-color: var(--bs-primary);
     color: white;
 }
 
 .rate-footer {
-    background-color: lightgray !important;
+    background-color: var(--bs-gray-500) !important;
 }
