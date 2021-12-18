@@ -9,8 +9,8 @@ main {
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
-  margin: 1rem 10%;
-  padding-bottom: 3rem;
+  margin: 3rem 10%;
+  padding: 3rem 0;
 }
 
 footer {

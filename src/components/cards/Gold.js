@@ -40,9 +40,9 @@ export default function Gold(props) {
         return (
             <main>
                 <Card border="primary" className="rate text-center">
-                    <Card.Title className="rate-title">Cena złota</Card.Title>
+                    <Card.Title className="bg-primary bg-gradient text-white">Cena złota</Card.Title>
                     <Card.Text>{price} zł/g</Card.Text>
-                    <Card.Footer className="rate-footer">{d.getDate()}.{d.getMonth()}.{d.getFullYear()} r.</Card.Footer>
+                    <Card.Footer className="rate-footer bg-gradient">{d.getDate()}.{d.getMonth()}.{d.getFullYear()} r.</Card.Footer>
                 </Card>
             </main>
         );

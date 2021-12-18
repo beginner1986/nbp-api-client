@@ -2,11 +2,6 @@
     width: 15rem;
 }
 
-.rate-title {
-    background-color: var(--bs-primary);
-    color: white;
-}
-
 .rate-footer {
     background-color: var(--bs-gray-500) !important;
 }

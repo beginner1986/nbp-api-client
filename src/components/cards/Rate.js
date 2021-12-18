@@ -44,9 +44,9 @@ export default function Rate(props) {
 
         return (
             <Card border="primary" className="rate text-center">
-                <Card.Title className="rate-title">{name.toUpperCase()}</Card.Title>
+                <Card.Title className="bg-primary bg-gradient text-white">{name.toUpperCase()}</Card.Title>
                 <Card.Text>{multiplier} {code}: {(multiplier * mid).toFixed(4)}</Card.Text>
-                <Card.Footer className="rate-footer">{d.getDate()}.{d.getMonth()}.{d.getFullYear()} r.</Card.Footer>
+                <Card.Footer className="rate-footer bg-gradient">{d.getDate()}.{d.getMonth()}.{d.getFullYear()} r.</Card.Footer>
             </Card>
         );
     }
