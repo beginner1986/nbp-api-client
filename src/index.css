@@ -10,6 +10,7 @@ main {
   flex-wrap: wrap;
   gap: 1rem;
   margin: 1rem 10%;
+  padding-bottom: 3rem;
 }
 
 footer {
