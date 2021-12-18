@@ -9,4 +9,18 @@ header {
   #navbar {
     display: none;
   }
+
+  #hamburger {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 999px) {
+  #navbar {
+    display: flex;
+  }
+
+  #hamburger {
+    display: none;
+  }
 }

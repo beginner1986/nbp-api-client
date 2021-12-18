@@ -3,11 +3,11 @@ import {LinkContainer} from "react-router-bootstrap";
 import SearchForm from "./SearchForm";
 import {Outlet} from "react-router-dom";
 
-export default function NavigationBar() {
+export default function NavigationBar(props) {
     return (
         <>
-            <Navbar fixed="top" bg="primary" variant="dark" id="navbar">
-                <Container>
+            <Navbar fixed="top" bg="primary" variant="dark" id={props.id}>
+                <Container fluid>
                     <LinkContainer to="/">
                         <Navbar.Brand>
                             <img
