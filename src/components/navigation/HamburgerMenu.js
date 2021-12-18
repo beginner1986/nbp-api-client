@@ -18,6 +18,7 @@ export default function HamburgerMenu(props) {
                             />
                         </Navbar.Brand>
                     </LinkContainer>
+                    <div className="text-center text-white">KURSY WALUT NBP</div>
                     <Navbar.Toggle aria-controls="offcanvasNavbar"/>
                     <Navbar.Offcanvas placement="start">
                         <Offcanvas.Header closeButton>
