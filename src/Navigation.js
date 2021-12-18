@@ -1,6 +1,6 @@
 import './Navigation.css';
-import NavigationBar from "./components/NavigationBar";
-import HamburgerMenu from "./components/HamburgerMenu";
+import NavigationBar from "./components/navigation/NavigationBar";
+import HamburgerMenu from "./components/navigation/HamburgerMenu";
 
 function Navigation() {
   return (

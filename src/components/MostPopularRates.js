@@ -1,4 +1,4 @@
-import Rate from "./Rate";
+import Rate from "./cards/Rate";
 
 export default function MostPopularRates() {
     return (

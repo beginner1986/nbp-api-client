@@ -1,4 +1,4 @@
-import Error from "./Error";
+import Error from "./cards/Error";
 import {Spinner, Table} from "react-bootstrap";
 
 export default function TabView(props) {

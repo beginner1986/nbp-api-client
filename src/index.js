@@ -5,9 +5,9 @@ import Navigation from './Navigation';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Tab from "./components/Tab";
-import Gold from "./components/Gold";
+import Gold from "./components/cards/Gold";
 import MostPopularRates from "./components/MostPopularRates";
-import Error from "./components/Error";
+import Error from "./components/cards/Error";
 import SearchResults from "./components/SearchResults";
 import Footer from "./components/Footer";
 
