@@ -6,7 +6,7 @@ import NavigationContent from "./NavigationContent";
 export default function HamburgerMenu(props) {
     return (
         <>
-            <Navbar fixed="top" bg="primary" variant="dark"  expand={false} id={props.id}>
+            <Navbar fixed="top" bg="primary" variant="dark" collapseOnSelect={true} expand={false} id={props.id}>
                 <Container fluid>
                     <LinkContainer to="/">
                         <Navbar.Brand>
