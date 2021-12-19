@@ -43,7 +43,7 @@ export default function Rate(props) {
         const d = new Date(date);
 
         return (
-            <Card border="primary" className="rate text-center">
+            <Card border="primary" className="rate text-center animate__animated animate__backInUp">
                 <Card.Title className="bg-primary bg-gradient text-white">{name.toUpperCase()}</Card.Title>
                 <Card.Text>{multiplier} {code}: {(multiplier * mid).toFixed(4)}</Card.Text>
                 <Card.Footer className="rate-footer bg-gradient">{d.getDate()}.{d.getMonth()}.{d.getFullYear()} r.</Card.Footer>

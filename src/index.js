@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Navigation from './Navigation';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'animate.css';
+import Navigation from './Navigation';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Tab from "./components/Tab";
 import Gold from "./components/cards/Gold";

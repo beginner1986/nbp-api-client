@@ -10,3 +10,4 @@ All the interface prepared in Polish.
 - [Bootstrap](https://getbootstrap.com/)
 - [React Router Boostrap](https://www.npmjs.com/package/react-router-bootstrap/)
 - [Font Awsome](https://fontawesome.com/)
+- [Animate.css](https://animate.style/)

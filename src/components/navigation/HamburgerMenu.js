@@ -6,7 +6,15 @@ import NavigationContent from "./NavigationContent";
 export default function HamburgerMenu(props) {
     return (
         <>
-            <Navbar fixed="top" bg="primary" variant="dark" collapseOnSelect={true} expand={false} id={props.id}>
+            <Navbar
+                fixed="top"
+                bg="primary"
+                variant="dark"
+                collapseOnSelect={true}
+                expand={false}
+                id={props.id}
+                className="animate__animated animate__bounce"
+            >
                 <Container fluid>
                     <LinkContainer to="/">
                         <Navbar.Brand>
@@ -19,7 +27,10 @@ export default function HamburgerMenu(props) {
                         </Navbar.Brand>
                     </LinkContainer>
                     <div className="text-center text-white">KURSY WALUT NBP</div>
-                    <Navbar.Toggle aria-controls="offcanvasNavbar"/>
+                    <Navbar.Toggle
+                        className="animate__animated animate__rotateIn"
+                        aria-controls="offcanvasNavbar"
+                    />
                     <Navbar.Offcanvas placement="start">
                         <Offcanvas.Header closeButton>
                             <Offcanvas.Title>Kursy walut NBP</Offcanvas.Title>

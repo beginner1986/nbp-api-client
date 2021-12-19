@@ -6,7 +6,13 @@ import NavigationContent from "./NavigationContent";
 export default function NavigationBar(props) {
     return (
         <>
-            <Navbar fixed="top" bg="primary" variant="dark" id={props.id}>
+            <Navbar
+                fixed="top"
+                bg="primary"
+                variant="dark"
+                id={props.id}
+                className="animate__animated animate__bounce"
+            >
                 <Container fluid>
                     <LinkContainer to="/">
                         <Navbar.Brand>
