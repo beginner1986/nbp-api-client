@@ -11,6 +11,7 @@ import MostPopularRates from "./components/MostPopularRates";
 import Error from "./components/cards/Error";
 import SearchResults from "./components/SearchResults";
 import Footer from "./components/Footer";
+import About from "./components/About";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -24,6 +25,7 @@ ReactDOM.render(
                 <Route path="/tab-c" element={<Tab tab="c"/>}/>
                 <Route path="/gold" element={<Gold/>}/>
                 <Route path="/search" element={<SearchResults/>}/>
+                <Route path="/about" element={<About/>}/>
                 <Route path="*" element={<Error/>}/>
             </Routes>
         </main>

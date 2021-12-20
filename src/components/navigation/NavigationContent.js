@@ -24,6 +24,9 @@ export default function NavigationContent() {
                 <LinkContainer to="/gold">
                     <Nav.Link>Cena złota</Nav.Link>
                 </LinkContainer>
+                <LinkContainer to="/about">
+                    <Nav.Link>O stronie</Nav.Link>
+                </LinkContainer>
             </Nav>
             <SearchForm/>
         </>
