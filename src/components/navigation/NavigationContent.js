@@ -16,6 +16,9 @@ export default function NavigationContent() {
                     <LinkContainer to="/tab-b">
                         <NavDropdown.Item>Tabela B</NavDropdown.Item>
                     </LinkContainer>
+                    <LinkContainer to="/tab-all">
+                        <NavDropdown.Item>Wszystkie</NavDropdown.Item>
+                    </LinkContainer>
                 </NavDropdown>
 
                 <LinkContainer to="/tab-c">
