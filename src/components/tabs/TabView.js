@@ -11,7 +11,7 @@ export default function TabView(props) {
         return (
             <>
                 <h2 className="text-primary text-center">Notowania z dnia {props.date}:</h2>
-                <Table striped bordered hover className="col-sm-10">
+                <Table striped bordered hover className="col-sm-10 animate__animated animate__bounceInLeft">
                     <thead>
                         {generateTableHeaders()}
                     </thead>
