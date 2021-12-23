@@ -3,27 +3,37 @@ import TabView from "./TabView";
 
 export default function Tab(props) {
     const [isLoaded, setIsLoaded] = useState(false);
-    const [error, setError] = useState(null);
+    const [error, setError] = useState("");
     const [date, setDate] = useState("");
     const [rates, setRates] = useState([]);
 
     useEffect(() => {
-        const url = `https://api.nbp.pl/api/exchangerates/tables/${props.tab}/`;
+            const url = 'https://api.nbp.pl/api/exchangerates/tables/';
+            let urls = [];
+            if(props.tabs) {
+                props.tabs.forEach(tab => urls.push(url.concat(tab)))
+            } else {
+                urls = [url + "a", url + "b"];
+            }
 
-        fetch(url)
-            .then(res => res.json())
-            .then((data) => {
-                setIsLoaded(true);
-                setDate(data.at(0).effectiveDate);
-                setRates(data.at(0).rates);
-                },
-                (error) => {
-                    setIsLoaded(true);
-                    setError(error);
-                }
-            );
-        }, [props.tab]
+            setRates([]);
+
+            Promise.all(urls.map(u => fetch(u)))
+                .then(responses => Promise.all(responses.map(res => res.json()))
+                    .then((data) => {
+                            data.forEach(d => {
+                                setRates(prevState =>  prevState.concat(d.at(0).rates))
+                                setDate(d.at(0).effectiveDate);
+                            });
+                        },
+                        (error) => {
+                            setError(error);
+                        }
+                    )
+                )
+                .then(setIsLoaded(true));
+        }, [props.tabs]
     );
 
-    return <TabView error={error} isLoaded={isLoaded} date={date} rates={rates} tab={props.tab}/>
+    return <TabView error={error} isLoaded={isLoaded} date={date} rates={rates} tabs={props.tabs}/>
 }

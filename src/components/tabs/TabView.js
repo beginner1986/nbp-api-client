@@ -3,7 +3,7 @@ import {Spinner, Table} from "react-bootstrap";
 
 export default function TabView(props) {
     if(props.error) {
-        const errorMessage = `Nie można pobrać tabeli ${props.tab.toUpperCase()}...`;
+        const errorMessage = `Nie można pobrać tabeli ${props.tabs.toUpperCase()}...`;
         return <Error error={errorMessage}/>
     } else if(!props.isLoaded) {
         return <Spinner animation="border"/>
@@ -31,7 +31,7 @@ export default function TabView(props) {
                 <th>Waluta</th>
                 {
                     function() {
-                        if(props.tab === "c") {
+                        if(props.tabs.at(0) === "c") {
                             return (
                                 <>
                                     <th>Średni kurs zakupu</th>
@@ -56,7 +56,7 @@ export default function TabView(props) {
                     <td>{rate.currency}</td>
                     {
                         function() {
-                            if(props.tab === "c") {
+                            if(props.tabs.at(0) === "c") {
                                 return (
                                     <>
                                         <td>{rate.ask}</td>
