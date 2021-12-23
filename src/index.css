@@ -27,12 +27,15 @@ h2 {
   font-size: 1.5rem;
 }
 
-ul li a {
-  text-decoration: none;
+ul li {
   font-size: 1.5em;
 }
 
-ul li a:hover {
+ul li a, h2 a {
+  text-decoration: none;
+}
+
+ul li a:hover, h2 a:hover {
   text-decoration: underline;
   color:red;
 }

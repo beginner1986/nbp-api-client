@@ -1,7 +1,7 @@
 export default function About() {
     return (
         <div>
-            <h2 className="text-primary text">Klient REST API Narodowego Banku Polskiego napisany jako ćwiczenie w ramach nauki React'a.</h2>
+            <h2 className="text-black">Klient <a href="http://api.nbp.pl/">REST API Narodowego Banku Polskiego</a> napisany jako ćwiczenie w ramach nauki React'a.</h2>
             <br/>
             <div>
                 <h3>Wykorzystane biblioteki:</h3>

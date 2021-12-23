@@ -32,6 +32,6 @@ ReactDOM.render(
         </main>
     </BrowserRouter>
     <Footer/>
-</React.StrictMode>,
-document.getElementById('root')
+  </React.StrictMode>,
+  document.getElementById('root')
 );

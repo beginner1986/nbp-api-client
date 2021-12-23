@@ -8,32 +8,32 @@ export default function Tab(props) {
     const [rates, setRates] = useState([]);
 
     useEffect(() => {
-            const url = 'https://api.nbp.pl/api/exchangerates/tables/';
-            let urls = [];
-            if(props.tabs) {
-                props.tabs.forEach(tab => urls.push(url.concat(tab)))
-            } else {
-                urls = [url + "a", url + "b"];
-            }
+        const url = 'https://api.nbp.pl/api/exchangerates/tables/';
+        let urls = [];
+        if(props.tabs) {
+            props.tabs.forEach(tab => urls.push(url.concat(tab)))
+        } else {
+            urls = [url + "a", url + "b"];
+        }
 
-            setRates([]);
-            setIsLoaded(false);
+        setRates([]);
+        setIsLoaded(false);
 
-            Promise.all(urls.map(u => fetch(u)))
-                .then(responses => Promise.all(responses.map(res => res.json()))
-                    .then((data) => {
-                            data.forEach(d => {
-                                setRates(prevState => prevState.concat(d.at(0).rates))
-                                setDate(d.at(0).effectiveDate);
-                            });
-                        },
-                        (error) => {
-                            setError(error);
-                        }
-                    )
+        Promise.all(urls.map(u => fetch(u)))
+            .then(responses => Promise.all(responses.map(res => res.json()))
+                .then((data) => {
+                        data.forEach(d => {
+                            setRates(prevState => prevState.concat(d.at(0).rates))
+                            setDate(d.at(0).effectiveDate);
+                        });
+                    },
+                    (error) => {
+                        setError(error);
+                    }
                 )
-                .then(() => setRates(prevState => prevState.sort((a, b) => a.code > b.code ? 1 : -1)))
-                .then(() => setIsLoaded(true));
+            )
+            .then(() => setRates(prevState => prevState.sort((a, b) => a.code > b.code ? 1 : -1)))
+            .then(() => setIsLoaded(true));
         }, [props.tabs]
     );
 
