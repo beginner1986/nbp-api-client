@@ -32,6 +32,7 @@ export default function Tab(props) {
                         }
                     )
                 )
+                .then(() => setRates(prevState => prevState.sort((a, b) => a.code > b.code ? 1 : -1)))
                 .then(() => setIsLoaded(true));
         }, [props.tabs]
     );
