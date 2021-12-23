@@ -17,12 +17,13 @@ export default function Tab(props) {
             }
 
             setRates([]);
+            setIsLoaded(false);
 
             Promise.all(urls.map(u => fetch(u)))
                 .then(responses => Promise.all(responses.map(res => res.json()))
                     .then((data) => {
                             data.forEach(d => {
-                                setRates(prevState =>  prevState.concat(d.at(0).rates))
+                                setRates(prevState => prevState.concat(d.at(0).rates))
                                 setDate(d.at(0).effectiveDate);
                             });
                         },
@@ -31,7 +32,7 @@ export default function Tab(props) {
                         }
                     )
                 )
-                .then(setIsLoaded(true));
+                .then(() => setIsLoaded(true));
         }, [props.tabs]
     );
 
