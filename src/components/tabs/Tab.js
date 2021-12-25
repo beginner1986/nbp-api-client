@@ -46,7 +46,7 @@ export default function Tab(props) {
                 }
             })
             .then(() => setIsLoaded(true));
-        }, [props.tabs, searchParams]
+        }, [props.tabs, searchParams, setSearchParams]
     );
 
     return <TabView error={error} isLoaded={isLoaded} date={date} rates={rates} tabs={props.tabs}/>
