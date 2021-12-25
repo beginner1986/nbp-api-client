@@ -1,11 +1,13 @@
 import {useEffect, useState} from "react";
 import TabView from "./TabView";
+import {useSearchParams} from "react-router-dom";
 
 export default function Tab(props) {
     const [isLoaded, setIsLoaded] = useState(false);
     const [error, setError] = useState("");
     const [date, setDate] = useState("");
     const [rates, setRates] = useState([]);
+    const [searchParams, setSearchParams] = useSearchParams();
 
     useEffect(() => {
         const url = 'https://api.nbp.pl/api/exchangerates/tables/';
@@ -18,6 +20,11 @@ export default function Tab(props) {
 
         setRates([]);
         setIsLoaded(false);
+
+        const resultsFilter = searchParams.get("value");
+        function filterRates(rate) {
+            return rate.code.toLowerCase().includes(resultsFilter.toLowerCase());
+        };
 
         Promise.all(urls.map(u => fetch(u)))
             .then(responses => Promise.all(responses.map(res => res.json()))
@@ -33,8 +40,13 @@ export default function Tab(props) {
                 )
             )
             .then(() => setRates(prevState => prevState.sort((a, b) => a.code > b.code ? 1 : -1)))
+            .then(() => {
+                if(resultsFilter) {
+                    setRates(prevState => prevState.filter(filterRates));
+                }
+            })
             .then(() => setIsLoaded(true));
-        }, [props.tabs]
+        }, [props.tabs, searchParams]
     );
 
     return <TabView error={error} isLoaded={isLoaded} date={date} rates={rates} tabs={props.tabs}/>

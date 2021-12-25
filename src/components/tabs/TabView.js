@@ -48,6 +48,8 @@ export default function TabView(props) {
     }
 
     function generateTableBody() {
+        if(!props.rates) return;
+
         return props.rates.map((rate, index) => {
             return (
                 <tr key={rate.code}>
