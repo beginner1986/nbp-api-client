@@ -23,7 +23,10 @@ export default function Tab(props) {
 
         const resultsFilter = searchParams.get("value");
         function filterRates(rate) {
-            return rate.code.toLowerCase().includes(resultsFilter.toLowerCase());
+            return (
+                rate.code.toLowerCase().includes(resultsFilter.toLowerCase()) ||
+                rate.currency.toLowerCase().includes(resultsFilter.toLowerCase())
+            );
         };
 
         Promise.all(urls.map(u => fetch(u)))
