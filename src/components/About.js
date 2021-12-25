@@ -1,11 +1,10 @@
 export default function About() {
     return (
         <div>
-            <h3 className="text-black">Klient <a href="http://api.nbp.pl/">REST API Narodowego Banku Polskiego</a>
-                napisany jako ćwiczenie w ramach nauki React'a. Projekt napisany od zera, bez używania gotowych szablonów.</h3>
+            <p className="text-black about">Klient <a href="http://api.nbp.pl/">REST API Narodowego Banku Polskiego</a> napisany jako ćwiczenie w ramach nauki React'a. Projekt napisany od zera, bez używania gotowych szablonów.</p>
             <br/>
             <div>
-                <h3>Wykorzystane biblioteki:</h3>
+                <p className="about">Wykorzystane biblioteki:</p>
                 <ul>
                     <li><a href="https://reactjs.org/">React</a></li>
                     <li><a href="https://reactrouter.com/">React Router</a></li>

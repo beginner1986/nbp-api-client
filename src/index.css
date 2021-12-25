@@ -27,19 +27,15 @@ h2 {
   font-size: 1.5rem;
 }
 
-h3 {
-  text-align: justify;
-}
-
 ul li {
   font-size: 1.5em;
 }
 
-ul li a, h2 a {
+ul li a, h2 a, p a {
   text-decoration: none;
 }
 
-ul li a:hover, h2 a:hover {
+ul li a:hover, h2 a:hover, p a:hover {
   text-decoration: underline;
   color:red;
 }
@@ -49,4 +45,9 @@ ul li a:hover, h2 a:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.about {
+  text-align: justify;
+  font-size: 1.5rem;
 }
