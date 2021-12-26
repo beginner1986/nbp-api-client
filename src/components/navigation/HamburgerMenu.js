@@ -14,7 +14,6 @@ export default function HamburgerMenu(props) {
                 fixed="top"
                 bg="primary"
                 variant="dark"
-                collapseOnSelect={true}
                 expand={false}
                 expanded={expanded}
                 id={props.id}
