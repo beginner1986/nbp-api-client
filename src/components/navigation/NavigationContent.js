@@ -1,6 +1,5 @@
 import {LinkContainer} from "react-router-bootstrap";
 import {Nav, NavDropdown} from "react-bootstrap";
-import SearchForm from "./SearchForm";
 
 export default function NavigationContent(props) {
     return (
