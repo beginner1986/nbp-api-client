@@ -31,7 +31,6 @@ export default function NavigationContent() {
                     <Nav.Link>O stronie</Nav.Link>
                 </LinkContainer>
             </Nav>
-            <SearchForm/>
         </>
     );
 }

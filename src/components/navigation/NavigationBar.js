@@ -2,6 +2,7 @@ import {Container, Navbar} from "react-bootstrap";
 import {LinkContainer} from "react-router-bootstrap";
 import {Outlet} from "react-router-dom";
 import NavigationContent from "./NavigationContent";
+import SearchForm from "./SearchForm";
 
 export default function NavigationBar(props) {
     return (
@@ -24,7 +25,8 @@ export default function NavigationBar(props) {
                             />
                         </Navbar.Brand>
                     </LinkContainer>
-                   <NavigationContent/>
+                    <NavigationContent/>
+                    <SearchForm/>
                 </Container>
             </Navbar>
             <Outlet/>

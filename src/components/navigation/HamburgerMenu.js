@@ -2,6 +2,7 @@ import {Container, Navbar, Offcanvas} from "react-bootstrap";
 import {LinkContainer} from "react-router-bootstrap";
 import {Outlet} from "react-router-dom";
 import NavigationContent from "./NavigationContent";
+import SearchForm from "./SearchForm";
 
 export default function HamburgerMenu(props) {
     return (
@@ -37,6 +38,7 @@ export default function HamburgerMenu(props) {
                         </Offcanvas.Header>
                         <Offcanvas.Body>
                             <NavigationContent/>
+                            <SearchForm/>
                         </Offcanvas.Body>
                     </Navbar.Offcanvas>
                 </Container>
