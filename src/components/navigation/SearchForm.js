@@ -11,7 +11,7 @@ export default function SearchForm(props) {
         setValue(event.target.value);
     }
     const handleSubmit = (event) => {
-        props.setExpanded(false);
+        props.collapseMenu();
         setValue("");
         if(value !== "")
             navigate(`/search?value=${value}`);

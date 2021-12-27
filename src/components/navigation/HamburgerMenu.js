@@ -8,6 +8,8 @@ import {useState} from "react";
 export default function HamburgerMenu(props) {
     const [expanded, setExpanded] = useState(false);
 
+    const collapseMenu = () => setExpanded(false);
+
     return (
         <>
             <Navbar
@@ -39,11 +41,11 @@ export default function HamburgerMenu(props) {
                     <Navbar.Offcanvas placement="start">
                         <Offcanvas.Header>
                             <Offcanvas.Title>Kursy walut NBP</Offcanvas.Title>
-                            <CloseButton onClick={() => setExpanded(false)}/>
+                            <CloseButton onClick={collapseMenu}/>
                         </Offcanvas.Header>
                         <Offcanvas.Body>
-                            <NavigationContent setExpanded={setExpanded}/>
-                            <SearchForm setExpanded={setExpanded}/>
+                            <NavigationContent collapseMenu={collapseMenu}/>
+                            <SearchForm collapseMenu={collapseMenu}/>
                         </Offcanvas.Body>
                     </Navbar.Offcanvas>
                 </Container>
