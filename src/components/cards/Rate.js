@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import {Card, Spinner} from "react-bootstrap";
 import "./Rate.css";
 import Error from "./Error";
+import {fetchRate} from "../../fetchRate";
 
 export default function Rate(props) {
     const [name, setName] = useState("");
@@ -12,10 +13,7 @@ export default function Rate(props) {
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
-        const url = `https://api.nbp.pl/api/exchangerates/rates/a/${props.currency}?format=json`;
-
-        fetch(url)
-            .then(res => res.json())
+        fetchRate(props.currency)
             .then((res) => {
                     setIsLoaded(true);
                     setMid(res.rates.at(0).mid);
