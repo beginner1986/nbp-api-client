@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import {Card, Spinner} from "react-bootstrap";
 import "./Rate.css";
 import Error from "./Error";
-import {fetchRate} from "../../fetchRate";
+import {fetchRate} from "./fetchRate";
 
 export default function Rate(props) {
     const [name, setName] = useState("");
