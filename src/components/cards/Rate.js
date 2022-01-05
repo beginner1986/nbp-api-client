@@ -35,6 +35,16 @@ export default function Rate(props) {
         }, [props.currency]
     );
 
+    function formatDate(date) {
+        const d = new Date(date);
+
+        let day = d.getDate().toString().padStart(2, '0');
+        let month = (d.getMonth() + 1).toString().padStart(2, '0');
+        let year = d.getFullYear();
+
+        return {day, month, year};
+    }
+
     if(error) {
         const errorMessage = `Błąd pobierania kursu ${props.currency}...`;
         return <Error error={errorMessage}/>
@@ -44,16 +54,14 @@ export default function Rate(props) {
         );
     } else {
         let multiplier = mid < 0.1 ? 100 : 1;
-        const d = new Date(date);
+        const formattedDate = formatDate(date);
 
         return (
             <Card border="primary" className="rate text-center animate__animated animate__backInUp">
                 <Card.Title className="bg-primary bg-gradient text-white">{name.toUpperCase()}</Card.Title>
                 <Card.Text>{multiplier} {code}: {(multiplier * mid).toFixed(4)}</Card.Text>
                 <Card.Footer className="rate-footer bg-gradient">
-                    {d.getDate().toString().padStart(2, '0')}
-                    .{(d.getMonth() + 1).toString().padStart(2, '0')}
-                    .{d.getFullYear()} r.
+                    {formattedDate.day}.{formattedDate.month}.{formattedDate.year} r.
                 </Card.Footer>
             </Card>
         );
