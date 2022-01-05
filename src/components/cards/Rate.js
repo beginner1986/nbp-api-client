@@ -2,7 +2,6 @@ import {useEffect, useState} from "react";
 import {Card, Spinner} from "react-bootstrap";
 import "./Rate.css";
 import Error from "./Error";
-import {fetchRate} from "./fetchRate";
 
 export default function Rate(props) {
     const [name, setName] = useState("");
@@ -13,19 +12,26 @@ export default function Rate(props) {
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
-        fetchRate(props.currency)
-            .then((res) => {
-                    setIsLoaded(true);
-                    setMid(res.rates.at(0).mid);
-                    setDate(res.rates.at(0).effectiveDate);
-                    setName(res.currency);
-                    setCode(res.code);
-                },
-                (error) => {
-                    setIsLoaded(true);
-                    setError(error);
-                }
-            );
+        async function fetchRate(currency) {
+            const url = `https://api.nbp.pl/api/exchangerates/rates/a/${currency}?format=json`;
+
+            await fetch(url)
+                .then(result => result.json())
+                .then((data) => {
+                        setIsLoaded(true);
+                        setMid(data.rates.at(0).mid);
+                        setDate(data.rates.at(0).effectiveDate);
+                        setName(data.currency);
+                        setCode(data.code);
+                    },
+                    (error) => {
+                        setIsLoaded(true);
+                        setError(error);
+                    }
+                );
+        }
+
+        fetchRate(props.currency);
         }, [props.currency]
     );
 
