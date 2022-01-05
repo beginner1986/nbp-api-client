@@ -50,7 +50,11 @@ export default function Rate(props) {
             <Card border="primary" className="rate text-center animate__animated animate__backInUp">
                 <Card.Title className="bg-primary bg-gradient text-white">{name.toUpperCase()}</Card.Title>
                 <Card.Text>{multiplier} {code}: {(multiplier * mid).toFixed(4)}</Card.Text>
-                <Card.Footer className="rate-footer bg-gradient">{d.getDate()}.{d.getMonth()}.{d.getFullYear()} r.</Card.Footer>
+                <Card.Footer className="rate-footer bg-gradient">
+                    {d.getDate().toString().padStart(2, '0')}
+                    .{(d.getMonth() + 1).toString().padStart(2, '0')}
+                    .{d.getFullYear()} r.
+                </Card.Footer>
             </Card>
         );
     }
