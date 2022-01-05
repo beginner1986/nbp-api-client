@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import {Card, Spinner} from "react-bootstrap";
 import "./Rate.css";
 import Error from "./Error";
+import {formatDate} from "../../utils";
 
 export default function Gold(props) {
     const [price, setPrice] = useState([]);
@@ -35,14 +36,16 @@ export default function Gold(props) {
             <Spinner animation="border"/>
         );
     } else {
-        const d = new Date(date);
+        const formattedDate = formatDate(date);
 
         return (
             <main>
                 <Card border="primary" className="rate text-center animate__animated animate__backInUp">
                     <Card.Title className="bg-primary bg-gradient text-white">Cena złota</Card.Title>
                     <Card.Text>{price} zł/g</Card.Text>
-                    <Card.Footer className="rate-footer bg-gradient">{d.getDate()}.{d.getMonth()}.{d.getFullYear()} r.</Card.Footer>
+                    <Card.Footer className="rate-footer bg-gradient">
+                        {formattedDate.day}.{formattedDate.month}.{formattedDate.year} r.
+                    </Card.Footer>
                 </Card>
             </main>
         );

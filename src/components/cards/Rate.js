@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import {Card, Spinner} from "react-bootstrap";
 import "./Rate.css";
 import Error from "./Error";
+import {formatDate} from "../../utils";
 
 export default function Rate(props) {
     const [name, setName] = useState("");
@@ -34,16 +35,6 @@ export default function Rate(props) {
         fetchRate(props.currency);
         }, [props.currency]
     );
-
-    function formatDate(date) {
-        const d = new Date(date);
-
-        let day = d.getDate().toString().padStart(2, '0');
-        let month = (d.getMonth() + 1).toString().padStart(2, '0');
-        let year = d.getFullYear();
-
-        return {day, month, year};
-    }
 
     if(error) {
         const errorMessage = `Błąd pobierania kursu ${props.currency}...`;
