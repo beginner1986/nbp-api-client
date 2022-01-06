@@ -3,8 +3,6 @@ import {Spinner, Table} from "react-bootstrap";
 import {formatDate} from "../../utils";
 
 export default function TabView(props) {
-    const date = formatDate(props.date);
-
     if(props.error) {
         const errorMessage = `Nie można pobrać tabeli ${props.tabs.toUpperCase()}...`;
         return <Error error={errorMessage}/>
@@ -14,7 +12,7 @@ export default function TabView(props) {
         return (
             <>
                 <h2 className="text-primary text-center">
-                    Notowania z dnia {date.day}.{date.month}.{date.year} r.:
+                    Notowania z dnia {formatDate(props.date)}:
                 </h2>
                 <Table striped bordered hover className="col-sm-10 animate__animated animate__bounceInLeft">
                     <thead>
